@@ -347,6 +347,8 @@ button:disabled {
 .topic-bars,
 .due-list,
 .review-list,
+.pyq-resource-list,
+.alignment-list,
 #patternRail {
   display: grid;
   gap: 10px;
@@ -404,6 +406,83 @@ button:disabled {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
   gap: 16px;
+}
+
+.trend-panel {
+  margin-bottom: 16px;
+}
+
+.trend-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.trend-card {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  border-top: 5px solid var(--indigo);
+}
+
+.trend-card span,
+.trend-card small,
+.pyq-card p,
+.alignment-item span,
+.alignment-item p,
+.key-status-card span,
+.key-status-card p {
+  color: var(--muted);
+}
+
+.trend-card strong {
+  display: block;
+  margin: 4px 0;
+  font-size: 1.5rem;
+}
+
+.trend-chart {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  min-height: 150px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #fff, #f8fafc);
+}
+
+.trend-set {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 26px;
+}
+
+.trend-bars {
+  display: flex;
+  align-items: end;
+  gap: 4px;
+  width: 100%;
+  height: 112px;
+}
+
+.trend-bars span {
+  display: block;
+  flex: 1;
+  min-height: 8px;
+  border-radius: 999px 999px 0 0;
+}
+
+.score-bar {
+  background: var(--indigo);
+}
+
+.accuracy-bar {
+  background: var(--green);
 }
 
 .topic-row {
@@ -768,6 +847,88 @@ input[type="range"] {
   margin-top: 14px;
 }
 
+.pyq-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.pyq-card,
+.alignment-item,
+.key-status-card {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.pyq-card {
+  display: grid;
+  gap: 12px;
+  border-left: 5px solid var(--blue);
+}
+
+.pyq-card h3,
+.alignment-item p,
+.key-status-card p {
+  margin: 6px 0 0;
+}
+
+.pyq-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pyq-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--wash);
+  text-decoration: none;
+}
+
+.alignment-item {
+  border-left: 5px solid var(--saffron);
+}
+
+.alignment-item strong,
+.alignment-item span {
+  display: block;
+}
+
+.key-panel {
+  margin-top: 16px;
+}
+
+.key-status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.key-status-card {
+  border-top: 5px solid var(--blue);
+}
+
+.key-status-card.good {
+  border-top-color: var(--green);
+}
+
+.key-status-card.warn {
+  border-top-color: var(--saffron);
+}
+
+.key-status-card strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 1.18rem;
+}
+
 .review-layout {
   display: grid;
   grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
@@ -880,7 +1041,9 @@ input[type="range"] {
   .dashboard-grid,
   .insight-grid,
   .practice-layout,
-  .review-layout {
+  .review-layout,
+  .pyq-layout,
+  .key-status-grid {
     grid-template-columns: 1fr;
   }
 
@@ -943,6 +1106,7 @@ input[type="range"] {
   .score-panel,
   .review-summary,
   .plan-grid,
+  .trend-grid,
   .decision-bar,
   .pie-wrap {
     grid-template-columns: 1fr;

@@ -136,6 +136,68 @@
     }
   ];
 
+  const pyqResources = [
+    {
+      year: "2025",
+      status: "Official answer key available",
+      upload: "13 May 2026",
+      papers: [
+        { label: "GS Paper I question paper", url: "https://upsc.gov.in/sites/default/files/QP-CSP-25-GENERAL-STUDIES-PAPER-I-26052025.pdf" },
+        { label: "GS Paper II question paper", url: "https://upsc.gov.in/sites/default/files/QP-CSP-25-GENERAL-STUDIES-PAPER-II-26052025.pdf" },
+        { label: "GS Paper I official answer key", url: "https://upsc.gov.in/sites/default/files/AnsKeyCivilServicesP-Exam-2025-GeneralStudies-I-130526.pdf" },
+        { label: "GS Paper II official answer key", url: "https://upsc.gov.in/sites/default/files/AnsKeyCivilServicesP-Exam-2025-GeneralStudies-II-130526.pdf" }
+      ]
+    },
+    {
+      year: "2024",
+      status: "Official question paper linked",
+      upload: "Question papers uploaded 18 June 2024",
+      papers: [
+        { label: "GS Paper I question paper", url: "https://upsc.gov.in/sites/default/files/QP-CSP-24-GENERAL-STUDIES-PAPER-I-180624.pdf" },
+        { label: "GS Paper II question paper", url: "https://upsc.gov.in/sites/default/files/QP-CSP-24-GENERAL-STUDIES-PAPER-II-180624.pdf" },
+        { label: "UPSC answer-key page", url: "https://upsc.gov.in/examinations/answer-key" }
+      ]
+    },
+    {
+      year: "2023",
+      status: "Official question paper linked",
+      upload: "Question papers uploaded 28 May 2023",
+      papers: [
+        { label: "GS Paper I question paper", url: "https://upsc.gov.in/sites/default/files/QP_CS_Pre_Exam_2023_280523.pdf" },
+        { label: "GS Paper II question paper", url: "https://upsc.gov.in/sites/default/files/QP_CS_Pre_Exam_2023_GENERAL_STUDIES_PAPER_II_280523.pdf" },
+        { label: "UPSC answer-key page", url: "https://upsc.gov.in/examinations/answer-key" }
+      ]
+    }
+  ];
+
+  const pyqAlignment = [
+    {
+      form: "How many statements are correct?",
+      signal: "Dominant in recent papers",
+      drill: "Use Statement traps + Elimination trainer. Count statements after killing absolutes."
+    },
+    {
+      form: "Correctly matched pairs",
+      signal: "Geography, culture, reports, institutions",
+      drill: "Anchor one known pair. If one pair is certainly wrong, options collapse quickly."
+    },
+    {
+      form: "News term to static concept",
+      signal: "Climate, tech, economy, IR",
+      drill: "For every current term, ask: body, law, place, process, limitation."
+    },
+    {
+      form: "Extreme-word trap",
+      signal: "Only, all, always, automatically, never",
+      drill: "Do not mark false mechanically, but slow down. These words carry option-risk."
+    },
+    {
+      form: "Official-key discipline",
+      signal: "Coaching keys can differ; UPSC final key decides",
+      drill: "When analysing PYQs, mark final official answer separately from your assumed answer."
+    }
+  ];
+
   const topicAdvice = {
     Polity: "Revise constitutional bodies, Parliament procedure, federal bodies, Fundamental Rights and schedules. Drill jurisdiction traps.",
     "History & Culture": "Do timeline anchors, Buddhism/Jainism, temple styles, literature, Bhakti-Sufi and modern sessions. Avoid deep textbook reading now.",
@@ -156,6 +218,9 @@
     performanceChart: document.getElementById("performanceChart"),
     chartLegend: document.getElementById("chartLegend"),
     chartLabel: document.getElementById("chartLabel"),
+    trendLabel: document.getElementById("trendLabel"),
+    trendGrid: document.getElementById("trendGrid"),
+    trendChart: document.getElementById("trendChart"),
     topicBars: document.getElementById("topicBars"),
     studyAdvice: document.getElementById("studyAdvice"),
     recentInsights: document.getElementById("recentInsights"),
@@ -188,6 +253,9 @@
     newsHook: document.getElementById("newsHook"),
     patternRail: document.getElementById("patternRail"),
     planGrid: document.getElementById("planGrid"),
+    pyqResources: document.getElementById("pyqResources"),
+    pyqAlignment: document.getElementById("pyqAlignment"),
+    officialKeyStatus: document.getElementById("officialKeyStatus"),
     dueCount: document.getElementById("dueCount"),
     dueQueue: document.getElementById("dueQueue"),
     reviewSummary: document.getElementById("reviewSummary"),
@@ -239,6 +307,7 @@
     renderCountdown();
     renderPlan();
     renderPatternRail();
+    renderPYQ();
     attachEvents();
     els.modeSelect.value = state.lastMode || "all";
     els.topicSelect.value = state.lastTopic || "all";
@@ -300,6 +369,7 @@
     });
     if (viewName === "dashboard") renderDashboard();
     if (viewName === "review") renderReview();
+    if (viewName === "pyq") renderPYQ();
   }
 
   function startNewSet(shouldSwitch) {
@@ -582,9 +652,57 @@
     `;
 
     renderChart(stats);
+    renderTrends();
     renderTopicBars();
     renderStudyAdvice(weakTopic, stats);
     renderInsights(stats, weakTopic);
+  }
+
+  function renderTrends() {
+    const sessions = getTrendSessions();
+    if (!sessions.length) {
+      els.trendLabel.textContent = "No trend yet";
+      els.trendGrid.innerHTML = `
+        <div class="trend-card">
+          <span>Need data</span>
+          <strong>2 sets</strong>
+          <small>Attempt at least two small sets to see improvement.</small>
+        </div>
+      `;
+      els.trendChart.innerHTML = `<div class="empty-state">Trend will show score, accuracy and speed movement set by set.</div>`;
+      return;
+    }
+
+    const first = sessions[0];
+    const last = sessions[sessions.length - 1];
+    const accuracyDelta = Math.round(last.accuracy - first.accuracy);
+    const timeDelta = Math.round(first.avgTime - last.avgTime);
+    const scoreDelta = Number((last.score - first.score).toFixed(2));
+    els.trendLabel.textContent = `${sessions.length} recent sets`;
+    els.trendGrid.innerHTML = [
+      ["Accuracy trend", `${accuracyDelta >= 0 ? "+" : ""}${accuracyDelta}%`, accuracyDelta >= 0 ? "Improving" : "Needs repair"],
+      ["Speed trend", `${timeDelta >= 0 ? "+" : ""}${timeDelta}s`, timeDelta >= 0 ? "Faster" : "Slower"],
+      ["Score trend", `${scoreDelta >= 0 ? "+" : ""}${scoreDelta}`, scoreDelta >= 0 ? "Better net" : "Negative drift"]
+    ]
+      .map(([label, value, note]) => `<div class="trend-card"><span>${label}</span><strong>${value}</strong><small>${note}</small></div>`)
+      .join("");
+
+    const maxScore = Math.max(2, ...sessions.map((session) => Math.max(0, session.score)));
+    els.trendChart.innerHTML = sessions
+      .map((session, index) => {
+        const scoreHeight = Math.max(8, Math.round((Math.max(0, session.score) / maxScore) * 100));
+        const accuracyHeight = Math.max(8, session.accuracy);
+        return `
+          <div class="trend-set">
+            <div class="trend-bars">
+              <span class="score-bar" style="height:${scoreHeight}%"></span>
+              <span class="accuracy-bar" style="height:${accuracyHeight}%"></span>
+            </div>
+            <small>S${index + 1}</small>
+          </div>
+        `;
+      })
+      .join("");
   }
 
   function renderChart(stats) {
@@ -703,6 +821,53 @@
       .join("");
   }
 
+  function renderPYQ() {
+    els.pyqResources.innerHTML = pyqResources
+      .map((resource) => `
+        <article class="pyq-card">
+          <div>
+            <span class="status-pill">${escapeHtml(resource.year)}</span>
+            <h3>${escapeHtml(resource.status)}</h3>
+            <p>${escapeHtml(resource.upload)}</p>
+          </div>
+          <div class="pyq-links">
+            ${resource.papers.map((paper) => `<a href="${paper.url}" target="_blank" rel="noreferrer">${escapeHtml(paper.label)}</a>`).join("")}
+          </div>
+        </article>
+      `)
+      .join("");
+
+    els.pyqAlignment.innerHTML = pyqAlignment
+      .map((item) => `
+        <div class="alignment-item">
+          <strong>${escapeHtml(item.form)}</strong>
+          <span>${escapeHtml(item.signal)}</span>
+          <p>${escapeHtml(item.drill)}</p>
+        </div>
+      `)
+      .join("");
+
+    els.officialKeyStatus.innerHTML = `
+      <div class="key-status-grid">
+        <div class="key-status-card good">
+          <span>Latest official key</span>
+          <strong>CSE Prelims 2025</strong>
+          <p>UPSC lists General Studies Paper I and II answer keys with date of upload 13 May 2026.</p>
+        </div>
+        <div class="key-status-card">
+          <span>How to use it</span>
+          <strong>PYQ final check</strong>
+          <p>Attempt the official paper first, then check UPSC key. Do not mix unofficial coaching answers into your final error log.</p>
+        </div>
+        <div class="key-status-card warn">
+          <span>Alignment note</span>
+          <strong>Pattern, not copying</strong>
+          <p>The drill bank imitates PYQ forms and traps. Official PDFs are linked separately for exact PYQ practice.</p>
+        </div>
+      </div>
+    `;
+  }
+
   function renderReview() {
     const stats = getOverallStats();
     const due = getDueQuestions();
@@ -773,6 +938,26 @@
     const lowEliminationWrong = state.attempts.filter((attempt) => !attempt.skipped && !attempt.correct && (attempt.eliminated || []).length < 2).length;
 
     return { total, attempted: attempted.length, correct, wrong, skipped, score, avgTime, accuracy, highConfidenceWrong, lowEliminationWrong };
+  }
+
+  function getTrendSessions() {
+    const attempts = state.attempts.slice(-60);
+    const sessions = [];
+    for (let index = 0; index < attempts.length; index += 10) {
+      const chunk = attempts.slice(index, index + 10);
+      if (!chunk.length) continue;
+      const attempted = chunk.filter((attempt) => !attempt.skipped);
+      const correct = attempted.filter((attempt) => attempt.correct).length;
+      const score = chunk.reduce((sum, attempt) => sum + (Number(attempt.score) || 0), 0);
+      const timed = chunk.filter((attempt) => Number(attempt.durationSec) > 0);
+      sessions.push({
+        total: chunk.length,
+        score,
+        accuracy: attempted.length ? Math.round((correct / attempted.length) * 100) : 0,
+        avgTime: timed.length ? Math.round(timed.reduce((sum, attempt) => sum + Number(attempt.durationSec), 0) / timed.length) : 0
+      });
+    }
+    return sessions;
   }
 
   function getTopicStats() {

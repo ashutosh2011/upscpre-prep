@@ -20,6 +20,7 @@
         <button class="nav-tab is-active" data-view="dashboard">Dashboard</button>
         <button class="nav-tab" data-view="practice">Practice</button>
         <button class="nav-tab" data-view="plan">Plan</button>
+        <button class="nav-tab" data-view="pyq">PYQ</button>
         <button class="nav-tab" data-view="review">Review</button>
       </nav>
 
@@ -53,6 +54,15 @@
           </section>
           <section class="study-panel" id="studyAdvice"></section>
         </div>
+
+        <section class="panel trend-panel">
+          <div class="panel-title">
+            <span class="eyebrow">Trend + Improvement</span>
+            <strong id="trendLabel">Last sets</strong>
+          </div>
+          <div class="trend-grid" id="trendGrid"></div>
+          <div class="trend-chart" id="trendChart" aria-label="Improvement trend chart"></div>
+        </section>
 
         <div class="insight-grid">
           <section class="panel">
@@ -196,6 +206,42 @@
             <a href="https://upsc.gov.in/examinations/examination-calendar" target="_blank" rel="noreferrer">UPSC calendar</a>
           </div>
         </div>
+      </section>
+
+      <section class="view" id="pyqView">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Official PYQ + Answer Keys</div>
+            <h2>Align practice with actual UPSC papers, not coaching noise.</h2>
+          </div>
+          <p>Use official papers for pattern memory and official keys for final correctness. The app questions remain original drills, mapped to PYQ forms.</p>
+        </div>
+
+        <div class="pyq-layout">
+          <section class="panel">
+            <div class="panel-title">
+              <span class="eyebrow">Official Links</span>
+              <strong>UPSC source PDFs</strong>
+            </div>
+            <div class="pyq-resource-list" id="pyqResources"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-title">
+              <span class="eyebrow">PYQ Alignment</span>
+              <strong>What to imitate</strong>
+            </div>
+            <div class="alignment-list" id="pyqAlignment"></div>
+          </section>
+        </div>
+
+        <section class="panel key-panel">
+          <div class="panel-title">
+            <span class="eyebrow">Official Key Status</span>
+            <strong>Latest verified source</strong>
+          </div>
+          <div id="officialKeyStatus"></div>
+        </section>
       </section>
 
       <section class="view" id="reviewView">
