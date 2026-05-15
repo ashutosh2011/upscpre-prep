@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UPSC Prelims 9-Day Drill</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Practice controls">
+        <div class="brand">
+          <span class="brand-mark">UP</span>
+          <div>
+            <h1>Prelims Drill</h1>
+            <p>9 days. Pattern first.</p>
+          </div>
+        </div>
+
+        <section class="panel countdown-panel">
+          <div class="eyebrow">Target</div>
+          <strong id="daysLeft">9 days</strong>
+          <span>UPSC CSE Prelims: 24 May 2026</span>
+        </section>
+
+        <nav class="nav-tabs" aria-label="App sections">
+          <button class="nav-tab is-active" data-view="practice">Practice</button>
+          <button class="nav-tab" data-view="plan">9-Day Plan</button>
+          <button class="nav-tab" data-view="pattern">Pattern</button>
+          <button class="nav-tab" data-view="review">Review</button>
+        </nav>
+
+        <section class="panel">
+          <label class="control-label" for="modeSelect">Mode</label>
+          <select id="modeSelect">
+            <option value="all">Exam-like mixed drill</option>
+            <option value="elimination">Elimination trainer</option>
+            <option value="current">Current-linked themes</option>
+            <option value="statements">Statement traps</option>
+            <option value="weak">Weak-area repair</option>
+          </select>
+
+          <label class="control-label" for="topicSelect">Topic</label>
+          <select id="topicSelect">
+            <option value="all">All syllabus areas</option>
+          </select>
+
+          <div class="button-row">
+            <button class="primary-btn" id="newSetBtn">New Set</button>
+            <button class="ghost-btn" id="resetBtn">Reset</button>
+          </div>
+        </section>
+
+        <section class="panel compact">
+          <div class="metric">
+            <span>Score</span>
+            <strong id="scoreMetric">0.00</strong>
+          </div>
+          <div class="metric">
+            <span>Accuracy</span>
+            <strong id="accuracyMetric">0%</strong>
+          </div>
+          <div class="metric">
+            <span>Questions</span>
+            <strong id="attemptMetric">0</strong>
+          </div>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <section class="view is-active" id="practiceView">
+          <div class="top-strip">
+            <div>
+              <div class="eyebrow">Paper I GS Simulator</div>
+              <h2>Practice the decision, not just the fact.</h2>
+            </div>
+            <div class="attempt-band">
+              <span>Real scoring: +2</span>
+              <span>-0.67 wrong</span>
+              <span>Skip 0</span>
+            </div>
+          </div>
+
+          <div class="practice-layout">
+            <article class="question-card" aria-live="polite">
+              <div class="question-meta">
+                <span id="questionTopic">Topic</span>
+                <span id="questionPattern">Pattern</span>
+                <span id="questionDifficulty">Difficulty</span>
+              </div>
+
+              <h3 id="questionText">Loading question...</h3>
+              <ol class="statements" id="statementList"></ol>
+
+              <div class="options" id="optionList"></div>
+
+              <div class="decision-bar">
+                <div>
+                  <label class="control-label" for="confidenceSlider">Confidence before answer</label>
+                  <input id="confidenceSlider" type="range" min="1" max="5" value="3" />
+                </div>
+                <div class="risk-box">
+                  <span>Guess value</span>
+                  <strong id="guessValue">Neutral</strong>
+                </div>
+              </div>
+
+              <div class="button-row">
+                <button class="primary-btn" id="submitBtn">Submit</button>
+                <button class="ghost-btn" id="skipBtn">Skip</button>
+                <button class="ghost-btn" id="nextBtn" disabled>Next</button>
+              </div>
+            </article>
+
+            <aside class="coach-panel">
+              <section class="panel">
+                <div class="eyebrow">Elimination Pad</div>
+                <p class="hint">Rule-out discipline: trust a guess only when the wrong options have a clear reason to fall.</p>
+                <div id="eliminationList" class="elimination-list"></div>
+              </section>
+
+              <section class="panel feedback-panel" id="feedbackPanel" hidden>
+                <div class="eyebrow" id="resultLabel">Result</div>
+                <h3 id="answerLine">Answer</h3>
+                <p id="explanationText"></p>
+                <div class="note-list" id="eliminationNotes"></div>
+                <div class="news-hook" id="newsHook"></div>
+              </section>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view" id="planView">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">May 15-24, 2026</div>
+              <h2>9-Day Prep Plan</h2>
+            </div>
+            <p>Designed for short runway: mocks, PYQ-form drills, error repair, and only high-yield current/static revision.</p>
+          </div>
+          <div class="plan-grid" id="planGrid"></div>
+        </section>
+
+        <section class="view" id="patternView">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">How UPSC Hides The Ball</div>
+              <h2>Pattern Map</h2>
+            </div>
+            <p>Use this as a bias map, not a prediction sheet. The exam can always rebalance.</p>
+          </div>
+          <div class="pattern-grid" id="patternGrid"></div>
+          <div class="source-card">
+            <h3>Source anchors used</h3>
+            <p>Official UPSC syllabus, preliminary exam scheme, and previous GS Paper I papers. The questions in this app are original and meant to imitate pattern and difficulty, not reproduce copyrighted test-series questions.</p>
+            <div class="source-links">
+              <a href="https://upsc.gov.in/examinations/previous-question-papers" target="_blank" rel="noreferrer">UPSC previous question papers</a>
+              <a href="https://upsc.gov.in/examinations/exam-notification" target="_blank" rel="noreferrer">UPSC notifications</a>
+              <a href="https://upsc.gov.in/examinations/examination-calendar" target="_blank" rel="noreferrer">UPSC calendar</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="reviewView">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Error Log</div>
+              <h2>Repair What Is Costing Marks</h2>
+            </div>
+            <button class="ghost-btn" id="clearReviewBtn">Clear Review</button>
+          </div>
+          <div class="review-summary" id="reviewSummary"></div>
+          <div class="review-list" id="reviewList"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./questions.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
