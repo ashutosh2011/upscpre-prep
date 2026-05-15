@@ -1348,3 +1348,766 @@ window.UPSC_QUESTIONS = [
     newsHook: "G20, financial inclusion, ONDC, health stack and global DPI cooperation make this high-yield."
   }
 ];
+
+window.UPSC_QUESTIONS.push(
+  {
+    id: "POL-009",
+    topic: "Polity",
+    pattern: "Anti-defection",
+    difficulty: 5,
+    modes: ["current", "elimination", "statements"],
+    newsWeight: "High",
+    question: "With reference to the Tenth Schedule of the Constitution, consider the following statements:",
+    statements: [
+      "It deals with disqualification of legislators on the ground of defection.",
+      "The decision on disqualification is made by the Presiding Officer of the House, subject to judicial review.",
+      "It allows a nominated member to join any political party at any time without attracting disqualification."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. A nominated member may join a political party within six months, not at any time.",
+    elimination: ["Any-time freedom for a legislator is too broad.", "Tenth Schedule questions often test exceptions and time limits."],
+    newsHook: "Defection, splits and Speaker's role keep the Tenth Schedule in news."
+  },
+  {
+    id: "POL-010",
+    topic: "Polity",
+    pattern: "Ordinance power",
+    difficulty: 4,
+    modes: ["statements"],
+    newsWeight: "Medium",
+    question: "Consider the following statements about ordinances in India:",
+    statements: [
+      "The President can promulgate an ordinance only when either House of Parliament is not in session.",
+      "An ordinance has the same force and effect as an Act of Parliament while it is in operation.",
+      "An ordinance can never be withdrawn before it lapses."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. An ordinance may be withdrawn by the President.",
+    elimination: ["Never is the trap here.", "Ordinance power is temporary law-making power, not permanent legislation."],
+    newsHook: "Ordinances appear in news whenever urgent legislative action is debated."
+  },
+  {
+    id: "POL-011",
+    topic: "Polity",
+    pattern: "Judiciary",
+    difficulty: 4,
+    modes: ["statements"],
+    newsWeight: "High",
+    question: "With reference to writ jurisdiction, consider the following statements:",
+    statements: [
+      "The Supreme Court can issue writs for enforcement of Fundamental Rights.",
+      "High Courts can issue writs for purposes other than enforcement of Fundamental Rights also.",
+      "Habeas corpus is associated with protection against unlawful detention."
+    ],
+    options: ["Only one", "Only two", "All three", "None"],
+    answer: 2,
+    explanation: "All three statements are correct. Article 32 is narrower in purpose than Article 226, though both are powerful remedies.",
+    elimination: ["Article 226 is wider than Article 32.", "Habeas corpus and unlawful detention is a fixed pair."],
+    newsHook: "Civil liberties, detention and judicial review keep writs relevant."
+  },
+  {
+    id: "POL-012",
+    topic: "Polity",
+    pattern: "Delimitation",
+    difficulty: 5,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "With reference to delimitation in India, consider the following statements:",
+    statements: [
+      "Delimitation involves redrawing boundaries of electoral constituencies.",
+      "Orders of the Delimitation Commission have the force of law and cannot be called in question before any court.",
+      "Delimitation has no relationship with Census data."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Delimitation is based on Census data subject to constitutional and statutory provisions.",
+    elimination: ["If constituency boundaries are involved, Census data is usually relevant.", "No relationship is an extreme formulation."],
+    newsHook: "Post-Census representation debates make delimitation high-yield."
+  },
+  {
+    id: "POL-013",
+    topic: "Polity",
+    pattern: "Directive principles",
+    difficulty: 4,
+    modes: ["statements"],
+    newsWeight: "Medium",
+    question: "Consider the following statements about Directive Principles of State Policy:",
+    statements: [
+      "They are not enforceable by any court.",
+      "They are fundamental in the governance of the country.",
+      "They cannot be used by courts while interpreting laws."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Courts may use DPSPs as interpretive aids even though they are not directly enforceable.",
+    elimination: ["Non-enforceable does not mean irrelevant.", "Cannot be used by courts is too absolute."],
+    newsHook: "Welfare laws, social justice and constitutional interpretation often invoke DPSPs."
+  },
+  {
+    id: "HIS-009",
+    topic: "History & Culture",
+    pattern: "Indus Valley",
+    difficulty: 4,
+    modes: ["statements"],
+    newsWeight: "Medium",
+    question: "With reference to the Indus Valley Civilization, consider the following statements:",
+    statements: [
+      "Dholavira is known for water management features.",
+      "Lothal is often associated with a dockyard-like structure.",
+      "The Indus script has been conclusively deciphered."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. The Indus script has not been conclusively deciphered.",
+    elimination: ["Conclusive decipherment is the red flag.", "Site-feature pairs are high-yield."],
+    newsHook: "Archaeological discoveries and UNESCO heritage news keep IVC sites relevant."
+  },
+  {
+    id: "HIS-010",
+    topic: "History & Culture",
+    pattern: "Jainism",
+    difficulty: 4,
+    modes: ["statements"],
+    newsWeight: "Medium",
+    question: "Consider the following statements about Jainism:",
+    statements: [
+      "Mahavira is regarded as the 24th Tirthankara.",
+      "Triratna in Jainism refers to right faith, right knowledge and right conduct.",
+      "Anekantavada is associated with the idea of one-sided absolutism."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Anekantavada is associated with many-sidedness of reality, not one-sided absolutism.",
+    elimination: ["Anekanta literally pushes you away from one-sidedness.", "Triratna is a fixed doctrinal anchor."],
+    newsHook: "Ancient religion questions often connect philosophy, art and ethics."
+  },
+  {
+    id: "HIS-011",
+    topic: "History & Culture",
+    pattern: "Mughal administration",
+    difficulty: 5,
+    modes: ["elimination", "statements"],
+    newsWeight: "Medium",
+    question: "With reference to Mughal administration, consider the following statements:",
+    statements: [
+      "Mansabdari was a system of ranking officials and military commanders.",
+      "Zat and sawar were associated with mansab ranks.",
+      "The jagir assigned to a mansabdar was always hereditary private property."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Jagirs were revenue assignments, not always hereditary private property.",
+    elimination: ["Always hereditary private property is too sweeping.", "Zat-sawar is the anchor."],
+    newsHook: "Medieval administration appears through terminology and institution questions."
+  },
+  {
+    id: "HIS-012",
+    topic: "History & Culture",
+    pattern: "Peasant movements",
+    difficulty: 5,
+    modes: ["statements"],
+    newsWeight: "Medium",
+    question: "Consider the following pairs:",
+    statements: [
+      "Indigo revolt - Bengal",
+      "Pabna agrarian unrest - Bengal",
+      "Moplah uprising - Malabar"
+    ],
+    options: ["Only one pair", "Only two pairs", "All three pairs", "None of the pairs"],
+    answer: 2,
+    explanation: "All three pairs are correct. Region-movement pairing is a frequent modern-history format.",
+    elimination: ["If region anchors are clear, pair questions become scoring opportunities.", "Do not convert every agrarian movement into the same province."],
+    newsHook: "Agrarian history is often revived by current farmer-policy debates."
+  },
+  {
+    id: "HIS-013",
+    topic: "History & Culture",
+    pattern: "Gandhian phase",
+    difficulty: 4,
+    modes: ["statements"],
+    newsWeight: "Medium",
+    question: "With reference to Gandhi's early satyagrahas in India, consider the following chronological order:",
+    statements: [
+      "Champaran",
+      "Ahmedabad Mill Strike",
+      "Kheda"
+    ],
+    options: ["1-2-3", "1-3-2", "2-1-3", "3-1-2"],
+    answer: 0,
+    explanation: "Champaran came in 1917, followed by Ahmedabad and Kheda in 1918.",
+    elimination: ["Champaran is the first anchor.", "Ahmedabad and Kheda are both 1918, but Ahmedabad is usually placed before Kheda."],
+    newsHook: "Anniversary-based modern-history questions often test sequence."
+  },
+  {
+    id: "ECO-010",
+    topic: "Economy",
+    pattern: "National income",
+    difficulty: 5,
+    modes: ["statements"],
+    newsWeight: "High",
+    question: "Consider the following statements about GDP and GVA:",
+    statements: [
+      "GDP at market prices can be derived from GVA by adding net product taxes.",
+      "GVA measures value added by producers before accounting for product taxes and subsidies.",
+      "GDP and GVA are always identical in value."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. GDP and GVA differ due to net product taxes.",
+    elimination: ["Always identical is the trap.", "GDP equals GVA plus taxes less subsidies on products."],
+    newsHook: "Quarterly growth releases often mention GDP-GVA divergence."
+  },
+  {
+    id: "ECO-011",
+    topic: "Economy",
+    pattern: "Industrial indicators",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "Medium",
+    question: "With reference to the Index of Industrial Production, consider the following statements:",
+    statements: [
+      "It measures growth in the volume of production in selected industrial sectors.",
+      "Mining, manufacturing and electricity are broad sectoral components.",
+      "It directly measures price inflation in industrial goods."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. IIP is a production-volume index, not a price-inflation index.",
+    elimination: ["Production versus prices is the key distinction.", "IIP and WPI/CPI should not be mixed."],
+    newsHook: "Manufacturing slowdown and core-sector data keep IIP relevant."
+  },
+  {
+    id: "ECO-012",
+    topic: "Economy",
+    pattern: "Digital payments",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "Consider the following statements about UPI:",
+    statements: [
+      "It enables instant real-time payments using a mobile platform.",
+      "It is operated by the National Payments Corporation of India.",
+      "It requires both payer and payee to disclose complete bank account numbers to each other for every transaction."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. UPI can use virtual payment addresses and does not require sharing complete account numbers between users.",
+    elimination: ["Complete account-number disclosure is not the UPI user experience.", "NPCI-UPI is a fixed current-affairs pair."],
+    newsHook: "Digital public infrastructure and cross-border payment links keep UPI high-yield."
+  },
+  {
+    id: "ECO-013",
+    topic: "Economy",
+    pattern: "Bank stress",
+    difficulty: 5,
+    modes: ["current", "elimination", "statements"],
+    newsWeight: "Medium",
+    question: "With reference to non-performing assets, consider the following statements:",
+    statements: [
+      "An asset generally becomes an NPA when interest or principal remains overdue for more than 90 days.",
+      "Provisioning requires banks to set aside funds against expected losses on bad loans.",
+      "Writing off a loan always means the borrower is legally absolved of repayment obligation."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Write-off is an accounting treatment and does not automatically waive recovery.",
+    elimination: ["Write-off and waiver are not the same.", "90-day overdue is the anchor."],
+    newsHook: "Bank balance sheets, IBC and recovery debates make NPAs relevant."
+  },
+  {
+    id: "ECO-014",
+    topic: "Economy",
+    pattern: "Labour data",
+    difficulty: 5,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "Consider the following statements about labour force indicators:",
+    statements: [
+      "Labour Force Participation Rate includes persons either working or seeking/available for work as a share of population.",
+      "Unemployment Rate is generally measured as unemployed persons as a share of the labour force.",
+      "A fall in unemployment rate always means employment has risen."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Unemployment can fall because people exit the labour force, so employment need not always rise.",
+    elimination: ["Always is dangerous in labour statistics.", "Separate labour force from total population."],
+    newsHook: "PLFS data, women workforce participation and jobs debates keep this current."
+  },
+  {
+    id: "ENV-011",
+    topic: "Environment",
+    pattern: "Biodiversity law",
+    difficulty: 5,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "With reference to India's Biological Diversity framework, consider the following statements:",
+    statements: [
+      "Biodiversity Management Committees can be constituted at local body levels.",
+      "People's Biodiversity Registers document local biological resources and associated knowledge.",
+      "Access and benefit sharing has no connection with biological resources."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Access and benefit sharing is central to biological resource governance.",
+    elimination: ["No connection is too extreme.", "BMC-PBR-ABS is the cluster."],
+    newsHook: "Biodiversity amendments and traditional knowledge debates make this important."
+  },
+  {
+    id: "ENV-012",
+    topic: "Environment",
+    pattern: "Air pollution",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "Consider the following statements about black carbon:",
+    statements: [
+      "It is a component of fine particulate matter produced by incomplete combustion.",
+      "It can contribute to warming by absorbing sunlight.",
+      "It remains in the atmosphere for centuries like carbon dioxide."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Black carbon is short-lived compared with carbon dioxide.",
+    elimination: ["Centuries like CO2 is the mismatch.", "Incomplete combustion is the source anchor."],
+    newsHook: "Air pollution, glacier melt and cookstove emissions keep black carbon relevant."
+  },
+  {
+    id: "ENV-013",
+    topic: "Environment",
+    pattern: "Carbon markets",
+    difficulty: 5,
+    modes: ["current", "elimination", "statements"],
+    newsWeight: "High",
+    question: "With reference to carbon credits, consider the following statements:",
+    statements: [
+      "A carbon credit generally represents one tonne of carbon dioxide equivalent reduced, avoided or removed.",
+      "Robust monitoring, reporting and verification is important for credibility.",
+      "Carbon credits automatically eliminate the need to reduce emissions at source."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Credits can complement mitigation but do not automatically remove the need for direct emission reductions.",
+    elimination: ["Automatically eliminate is the trap.", "MRV is the key quality filter."],
+    newsHook: "Carbon market rules and greenwashing concerns are current climate themes."
+  },
+  {
+    id: "ENV-014",
+    topic: "Environment",
+    pattern: "Invasive species",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "Medium",
+    question: "Consider the following statements about invasive alien species:",
+    statements: [
+      "They can alter native ecosystems and threaten biodiversity.",
+      "Lantana camara is often cited as an invasive plant in India.",
+      "Invasive alien species are always beneficial because they increase the number of species in an area."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Invasive species can harm native biodiversity despite adding a species count.",
+    elimination: ["Always beneficial is too naive for ecology.", "Lantana is a repeated India example."],
+    newsHook: "Forest management and biodiversity reports often flag invasives."
+  },
+  {
+    id: "ENV-015",
+    topic: "Environment",
+    pattern: "Circular economy",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "Medium",
+    question: "With reference to Extended Producer Responsibility, consider the following statements:",
+    statements: [
+      "It places responsibility on producers for management of products after their end of life.",
+      "It is discussed in the context of plastic waste and e-waste management.",
+      "It means consumers alone are responsible for waste generated by products."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. EPR shifts part of responsibility to producers, not consumers alone.",
+    elimination: ["Producer responsibility cannot mean consumer alone.", "Plastic/e-waste are current anchors."],
+    newsHook: "Plastic waste rules, e-waste and circular economy make EPR high-yield."
+  },
+  {
+    id: "GEO-009",
+    topic: "Geography",
+    pattern: "Atmospheric circulation",
+    difficulty: 5,
+    modes: ["statements"],
+    newsWeight: "Medium",
+    question: "With reference to jet streams, consider the following statements:",
+    statements: [
+      "They are narrow bands of strong winds in the upper troposphere.",
+      "Subtropical westerly jet has relevance for winter weather over parts of India.",
+      "Jet streams flow only from east to west across the globe."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Many jet streams are westerlies flowing west to east.",
+    elimination: ["Only east to west is incorrect for westerly jets.", "Upper troposphere strong winds is the anchor."],
+    newsHook: "Extreme weather and monsoon dynamics often connect to upper-air circulation."
+  },
+  {
+    id: "GEO-010",
+    topic: "Geography",
+    pattern: "Cyclones",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "Consider the following statements about tropical cyclones:",
+    statements: [
+      "They draw energy from warm ocean waters.",
+      "They are associated with low pressure at the centre.",
+      "The Coriolis force is irrelevant to their rotation."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Coriolis force is important for cyclone rotation.",
+    elimination: ["Irrelevant is too strong.", "Warm ocean plus low pressure is the basic mechanism."],
+    newsHook: "Bay of Bengal and Arabian Sea cyclones are regular news events."
+  },
+  {
+    id: "GEO-011",
+    topic: "Geography",
+    pattern: "Disasters",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "With reference to cloudbursts, consider the following statements:",
+    statements: [
+      "They involve intense rainfall over a small area in a short duration.",
+      "They are particularly hazardous in mountainous terrain due to flash floods and landslides.",
+      "They can be predicted with exact location and timing several months in advance."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Exact long-range prediction of cloudburst location and timing is not possible.",
+    elimination: ["Exact months-in-advance prediction is unrealistic.", "Small area, short duration, high intensity is the definition core."],
+    newsHook: "Himalayan disasters and urban flooding keep this current."
+  },
+  {
+    id: "GEO-012",
+    topic: "Geography",
+    pattern: "Agriculture",
+    difficulty: 5,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "Consider the following crop-condition pairs:",
+    statements: [
+      "Tea - well-distributed rainfall and acidic soils",
+      "Sugarcane - long frost-free growing season",
+      "Rubber - hot and humid equatorial conditions"
+    ],
+    options: ["Only one pair", "Only two pairs", "All three pairs", "None of the pairs"],
+    answer: 2,
+    explanation: "All three pairs are broadly correct. Crop geography questions test climate-soil matching.",
+    elimination: ["Tea-acidic soil and rubber-hot humid are fixed anchors.", "Sugarcane needs a long warm season."],
+    newsHook: "Agriculture, exports and climate stress keep crop geography useful."
+  },
+  {
+    id: "GEO-013",
+    topic: "Geography",
+    pattern: "Minerals",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "Medium",
+    question: "With reference to mineral resources in India, consider the following statements:",
+    statements: [
+      "Bauxite is the principal ore of aluminium.",
+      "Mica is used in electrical and electronic industries because of insulating properties.",
+      "India has no deposits of iron ore."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. India has significant iron ore deposits.",
+    elimination: ["No deposits is an obvious overstatement.", "Ore-use pairs are high-yield."],
+    newsHook: "Mineral auctions and industrial supply chains keep mineral geography relevant."
+  },
+  {
+    id: "SCI-009",
+    topic: "Science & Tech",
+    pattern: "Green hydrogen",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "With reference to green hydrogen, consider the following statements:",
+    statements: [
+      "It can be produced by electrolysis of water using renewable electricity.",
+      "It may be useful for decarbonising hard-to-abate sectors.",
+      "It is produced only by reforming natural gas without carbon capture."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Natural gas reforming without carbon capture is generally grey hydrogen, not green hydrogen.",
+    elimination: ["Green means renewable-powered production in the usual policy context.", "Only natural gas reforming is the inversion."],
+    newsHook: "National Green Hydrogen Mission and industrial decarbonisation make this high-yield."
+  },
+  {
+    id: "SCI-010",
+    topic: "Science & Tech",
+    pattern: "Nuclear energy",
+    difficulty: 5,
+    modes: ["current", "statements"],
+    newsWeight: "Medium",
+    question: "Consider the following statements about Small Modular Reactors:",
+    statements: [
+      "They are nuclear reactors designed with smaller power capacity than conventional large reactors.",
+      "Modularity can allow factory fabrication of components.",
+      "They use chemical combustion of coal as the primary energy source."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. SMRs are nuclear systems, not coal-combustion systems.",
+    elimination: ["Coal combustion is category error.", "Modular fabrication is the clue."],
+    newsHook: "Energy transition and nuclear policy debates keep SMRs current."
+  },
+  {
+    id: "SCI-011",
+    topic: "Science & Tech",
+    pattern: "Public health tech",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "With reference to genomic surveillance, consider the following statements:",
+    statements: [
+      "It can help track variants of pathogens.",
+      "It involves analysis of genetic material.",
+      "It is unrelated to infectious disease monitoring."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Genomic surveillance can be important in infectious disease monitoring.",
+    elimination: ["Unrelated is the false extreme.", "Variant tracking is the current-affairs anchor."],
+    newsHook: "COVID-19, influenza and antimicrobial resistance surveillance keep this relevant."
+  },
+  {
+    id: "SCI-012",
+    topic: "Science & Tech",
+    pattern: "Cybersecurity",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "Consider the following statements about ransomware:",
+    statements: [
+      "It can encrypt a victim's files and demand payment for restoration.",
+      "Regular offline backups can reduce damage from ransomware attacks.",
+      "It is a type of hardware used only for satellite navigation."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Ransomware is malicious software, not navigation hardware.",
+    elimination: ["If the third statement changes the category completely, it is usually wrong.", "Backup as resilience is the practical clue."],
+    newsHook: "Cyberattacks on public infrastructure and businesses make cybersecurity terms important."
+  },
+  {
+    id: "SCI-013",
+    topic: "Science & Tech",
+    pattern: "Space technology",
+    difficulty: 5,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "With reference to reusable launch vehicles, consider the following statements:",
+    statements: [
+      "They aim to recover and reuse parts of the launch system.",
+      "Reusability can potentially reduce launch costs over multiple missions.",
+      "A reusable launch vehicle can never require refurbishment or inspection between flights."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Reusable systems may still need inspection and refurbishment.",
+    elimination: ["Never require inspection is unrealistic.", "Cost reduction is potential, not automatic perfection."],
+    newsHook: "ISRO and private space launch developments make reusability high-yield."
+  },
+  {
+    id: "IR-007",
+    topic: "International Relations",
+    pattern: "Regional grouping",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "Consider the following statements about ASEAN:",
+    statements: [
+      "It is a regional organisation of Southeast Asian countries.",
+      "India is a member of ASEAN.",
+      "ASEAN-led forums are relevant to Indo-Pacific diplomacy."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 2,
+    explanation: "Statements 1 and 3 are correct. India is not a member of ASEAN, though it is a dialogue partner.",
+    elimination: ["India participates with ASEAN but is not a member.", "Membership traps are common in IR."],
+    newsHook: "Act East policy and Indo-Pacific forums keep ASEAN important."
+  },
+  {
+    id: "IR-008",
+    topic: "International Relations",
+    pattern: "Mini-lateral grouping",
+    difficulty: 5,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "With reference to I2U2, consider the following statements:",
+    statements: [
+      "It includes India, Israel, the United Arab Emirates and the United States.",
+      "It has discussed cooperation in areas such as food security, energy and technology.",
+      "It is a United Nations peacekeeping mission."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. I2U2 is a minilateral grouping, not a UN peacekeeping mission.",
+    elimination: ["The name itself gives the four-country clue.", "UN mission is category mismatch."],
+    newsHook: "West Asia diplomacy and minilateral cooperation make I2U2 relevant."
+  },
+  {
+    id: "IR-009",
+    topic: "International Relations",
+    pattern: "Connectivity",
+    difficulty: 5,
+    modes: ["current", "elimination", "statements"],
+    newsWeight: "High",
+    question: "Consider the following statements about the India-Middle East-Europe Economic Corridor:",
+    statements: [
+      "It has been discussed as a connectivity initiative linking India with West Asia and Europe.",
+      "It may involve rail and shipping connectivity components.",
+      "It is a domestic irrigation scheme limited to one Indian state."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. IMEC is an international connectivity initiative, not a state irrigation scheme.",
+    elimination: ["The name itself rules out statement 3.", "Connectivity questions often test geography and purpose."],
+    newsHook: "G20, supply chains and West Asia geopolitics keep IMEC in news."
+  },
+  {
+    id: "IR-010",
+    topic: "International Relations",
+    pattern: "Nuclear governance",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "Medium",
+    question: "With reference to the IAEA, consider the following statements:",
+    statements: [
+      "It is associated with peaceful uses of nuclear energy and safeguards.",
+      "It reports to the United Nations General Assembly and Security Council in specified contexts.",
+      "It is a private corporation headquartered in Mumbai."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. The IAEA is an international organisation headquartered in Vienna.",
+    elimination: ["Private corporation in Mumbai is a clear mismatch.", "Safeguards is the IAEA anchor."],
+    newsHook: "Nuclear safety, Iran, Ukraine and civil nuclear cooperation keep IAEA relevant."
+  },
+  {
+    id: "IR-011",
+    topic: "International Relations",
+    pattern: "Expanded grouping",
+    difficulty: 5,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "Consider the following statements about BRICS:",
+    statements: [
+      "It began with Brazil, Russia, India, China and South Africa as the commonly known five-member grouping.",
+      "The New Development Bank is associated with BRICS.",
+      "BRICS is identical to NATO in purpose and membership."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. BRICS is not identical to NATO in purpose or membership.",
+    elimination: ["Identical to NATO is the trap.", "NDB-BRICS is the anchor."],
+    newsHook: "BRICS expansion and de-dollarisation debates make this current."
+  },
+  {
+    id: "SOC-005",
+    topic: "Schemes & Social Sector",
+    pattern: "Food security",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "With reference to the National Food Security Act, consider the following statements:",
+    statements: [
+      "It provides for subsidised foodgrains to eligible households.",
+      "It covers maternity benefit provisions subject to the Act.",
+      "It abolished the entire public distribution system."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. NFSA works through the targeted public distribution system rather than abolishing it.",
+    elimination: ["A food-security law abolishing PDS should look wrong.", "Eligibility and entitlement are the key scheme traps."],
+    newsHook: "Free foodgrain, nutrition and fiscal subsidy debates keep NFSA relevant."
+  },
+  {
+    id: "SOC-006",
+    topic: "Schemes & Social Sector",
+    pattern: "Nutrition",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "Consider the following statements about Poshan Abhiyaan:",
+    statements: [
+      "It aims to improve nutritional outcomes for children, adolescent girls, pregnant women and lactating mothers.",
+      "It uses convergence, monitoring and behavioural change as important components.",
+      "It is a scheme exclusively for building national highways."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Poshan Abhiyaan is a nutrition mission, not a highway scheme.",
+    elimination: ["The scheme name itself points to nutrition.", "Convergence is a repeated governance keyword."],
+    newsHook: "NFHS indicators and malnutrition debates keep nutrition schemes important."
+  },
+  {
+    id: "SOC-007",
+    topic: "Schemes & Social Sector",
+    pattern: "Water supply",
+    difficulty: 4,
+    modes: ["current", "statements"],
+    newsWeight: "High",
+    question: "With reference to Jal Jeevan Mission, consider the following statements:",
+    statements: [
+      "It aims to provide functional household tap connections to rural households.",
+      "Community participation and local water-source sustainability are relevant to its implementation.",
+      "It is primarily a scheme for interplanetary space exploration."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. Jal Jeevan Mission relates to drinking water supply.",
+    elimination: ["Absurd category mismatches are easy marks; do not overthink them.", "Functional household tap connection is the anchor phrase."],
+    newsHook: "Rural water access, quality and sustainability keep this scheme high-yield."
+  },
+  {
+    id: "SOC-008",
+    topic: "Schemes & Social Sector",
+    pattern: "Urban livelihoods",
+    difficulty: 5,
+    modes: ["current", "statements"],
+    newsWeight: "Medium",
+    question: "Consider the following statements about PM SVANidhi:",
+    statements: [
+      "It is associated with collateral-free working capital loans for street vendors.",
+      "Digital transactions and repayment incentives are part of the scheme design.",
+      "It is meant only for large corporate exporters."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. PM SVANidhi targets street vendors, not large corporate exporters.",
+    elimination: ["Beneficiary group is the main trap.", "Street vendor plus working capital is the fixed pair."],
+    newsHook: "Urban informal economy and financial inclusion keep PM SVANidhi relevant."
+  },
+  {
+    id: "SOC-009",
+    topic: "Schemes & Social Sector",
+    pattern: "District development",
+    difficulty: 5,
+    modes: ["current", "elimination", "statements"],
+    newsWeight: "Medium",
+    question: "With reference to the Aspirational Districts Programme, consider the following statements:",
+    statements: [
+      "It focuses on improving selected development indicators in relatively under-developed districts.",
+      "Health and nutrition, education, agriculture and water resources, financial inclusion and basic infrastructure are among key themes.",
+      "It is implemented only through a single indicator of stock market performance."
+    ],
+    options: ["1 and 2 only", "2 and 3 only", "1 and 3 only", "1, 2 and 3"],
+    answer: 0,
+    explanation: "Statements 1 and 2 are correct. The programme tracks multiple development indicators, not stock market performance alone.",
+    elimination: ["A district-development programme will not be reduced to stock market performance.", "Theme-list recognition solves this."],
+    newsHook: "Data-driven governance and district-level outcomes make this programme relevant."
+  }
+);

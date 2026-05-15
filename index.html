@@ -7,173 +7,222 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="app-shell">
-      <aside class="sidebar" aria-label="Practice controls">
-        <div class="brand">
-          <span class="brand-mark">UP</span>
+    <header class="app-topbar">
+      <div class="brand">
+        <span class="brand-mark">UP</span>
+        <div>
+          <h1>Prelims Drill</h1>
+          <p>Question-first practice for the last sprint</p>
+        </div>
+      </div>
+
+      <nav class="nav-tabs" aria-label="App sections">
+        <button class="nav-tab is-active" data-view="dashboard">Dashboard</button>
+        <button class="nav-tab" data-view="practice">Practice</button>
+        <button class="nav-tab" data-view="plan">Plan</button>
+        <button class="nav-tab" data-view="review">Review</button>
+      </nav>
+
+      <div class="exam-pill">
+        <span id="daysLeft">8 days</span>
+        <small>Prelims: 24 May 2026</small>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="view is-active" id="dashboardView">
+        <div class="section-head dashboard-head">
           <div>
-            <h1>Prelims Drill</h1>
-            <p>9 days. Pattern first.</p>
+            <div class="eyebrow">Performance Dashboard</div>
+            <h2>What to study next, based on how you practice.</h2>
+          </div>
+          <button class="primary-btn" data-start-practice>Start focused drill</button>
+        </div>
+
+        <div class="dashboard-grid">
+          <section class="score-panel" id="dashboardSummary"></section>
+          <section class="chart-panel">
+            <div class="panel-title">
+              <span class="eyebrow">Attempt Mix</span>
+              <strong id="chartLabel">No attempts yet</strong>
+            </div>
+            <div class="pie-wrap">
+              <div class="pie-chart" id="performanceChart" aria-label="Performance pie chart"></div>
+              <div class="chart-legend" id="chartLegend"></div>
+            </div>
+          </section>
+          <section class="study-panel" id="studyAdvice"></section>
+        </div>
+
+        <div class="insight-grid">
+          <section class="panel">
+            <div class="panel-title">
+              <span class="eyebrow">Topic Heatmap</span>
+              <strong>Accuracy + time</strong>
+            </div>
+            <div class="topic-bars" id="topicBars"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-title">
+              <span class="eyebrow">Where It Is Going Wrong</span>
+              <strong>Decision diagnosis</strong>
+            </div>
+            <div class="insight-list" id="recentInsights"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="view" id="practiceView">
+        <div class="practice-toolbar">
+          <div>
+            <div class="eyebrow">Paper I GS Simulator</div>
+            <h2>Focus only on the question. Decide, eliminate, move.</h2>
+          </div>
+
+          <div class="practice-controls" aria-label="Practice controls">
+            <label>
+              <span>Mode</span>
+              <select id="modeSelect">
+                <option value="all">Mixed drill</option>
+                <option value="elimination">Elimination trainer</option>
+                <option value="current">Current-linked</option>
+                <option value="statements">Statement traps</option>
+                <option value="weak">Weak-area repair</option>
+                <option value="spaced">Spaced repetition</option>
+              </select>
+            </label>
+            <label>
+              <span>Topic</span>
+              <select id="topicSelect">
+                <option value="all">All topics</option>
+              </select>
+            </label>
+            <label>
+              <span>Set</span>
+              <select id="setSizeSelect">
+                <option value="10">10 Q</option>
+                <option value="20" selected>20 Q</option>
+                <option value="30">30 Q</option>
+              </select>
+            </label>
+            <button class="primary-btn" id="newSetBtn">New Set</button>
+            <button class="ghost-btn" id="resetBtn">Reset Q</button>
           </div>
         </div>
 
-        <section class="panel countdown-panel">
-          <div class="eyebrow">Target</div>
-          <strong id="daysLeft">9 days</strong>
-          <span>UPSC CSE Prelims: 24 May 2026</span>
-        </section>
-
-        <nav class="nav-tabs" aria-label="App sections">
-          <button class="nav-tab is-active" data-view="practice">Practice</button>
-          <button class="nav-tab" data-view="plan">9-Day Plan</button>
-          <button class="nav-tab" data-view="pattern">Pattern</button>
-          <button class="nav-tab" data-view="review">Review</button>
-        </nav>
-
-        <section class="panel">
-          <label class="control-label" for="modeSelect">Mode</label>
-          <select id="modeSelect">
-            <option value="all">Exam-like mixed drill</option>
-            <option value="elimination">Elimination trainer</option>
-            <option value="current">Current-linked themes</option>
-            <option value="statements">Statement traps</option>
-            <option value="weak">Weak-area repair</option>
-          </select>
-
-          <label class="control-label" for="topicSelect">Topic</label>
-          <select id="topicSelect">
-            <option value="all">All syllabus areas</option>
-          </select>
-
-          <div class="button-row">
-            <button class="primary-btn" id="newSetBtn">New Set</button>
-            <button class="ghost-btn" id="resetBtn">Reset</button>
-          </div>
-        </section>
-
-        <section class="panel compact">
-          <div class="metric">
-            <span>Score</span>
-            <strong id="scoreMetric">0.00</strong>
-          </div>
-          <div class="metric">
-            <span>Accuracy</span>
-            <strong id="accuracyMetric">0%</strong>
-          </div>
-          <div class="metric">
-            <span>Questions</span>
-            <strong id="attemptMetric">0</strong>
-          </div>
-        </section>
-      </aside>
-
-      <main class="workspace">
-        <section class="view is-active" id="practiceView">
-          <div class="top-strip">
-            <div>
-              <div class="eyebrow">Paper I GS Simulator</div>
-              <h2>Practice the decision, not just the fact.</h2>
+        <div class="practice-layout">
+          <article class="question-card" aria-live="polite">
+            <div class="question-meta">
+              <span id="questionCounter">Question 1/20</span>
+              <span id="timerText">00:00</span>
+              <span id="questionTopic">Topic</span>
+              <span id="questionPattern">Pattern</span>
+              <span id="questionDifficulty">Difficulty</span>
             </div>
-            <div class="attempt-band">
-              <span>Real scoring: +2</span>
-              <span>-0.67 wrong</span>
-              <span>Skip 0</span>
-            </div>
-          </div>
 
-          <div class="practice-layout">
-            <article class="question-card" aria-live="polite">
-              <div class="question-meta">
-                <span id="questionTopic">Topic</span>
-                <span id="questionPattern">Pattern</span>
-                <span id="questionDifficulty">Difficulty</span>
+            <h3 id="questionText">Loading question...</h3>
+            <ol class="statements" id="statementList"></ol>
+
+            <div class="recall-box">
+              <label for="recallInput">Active recall before option selection</label>
+              <textarea id="recallInput" rows="2" placeholder="Write the rule, fact, or elimination trigger you are using. Short is fine."></textarea>
+            </div>
+
+            <div class="options" id="optionList"></div>
+
+            <div class="decision-bar">
+              <div>
+                <label class="control-label" for="confidenceSlider">Confidence before answer</label>
+                <input id="confidenceSlider" type="range" min="1" max="5" value="3" />
               </div>
-
-              <h3 id="questionText">Loading question...</h3>
-              <ol class="statements" id="statementList"></ol>
-
-              <div class="options" id="optionList"></div>
-
-              <div class="decision-bar">
-                <div>
-                  <label class="control-label" for="confidenceSlider">Confidence before answer</label>
-                  <input id="confidenceSlider" type="range" min="1" max="5" value="3" />
-                </div>
-                <div class="risk-box">
-                  <span>Guess value</span>
-                  <strong id="guessValue">Neutral</strong>
-                </div>
+              <div class="risk-box">
+                <span>Guess value</span>
+                <strong id="guessValue">Neutral</strong>
               </div>
+            </div>
 
-              <div class="button-row">
-                <button class="primary-btn" id="submitBtn">Submit</button>
-                <button class="ghost-btn" id="skipBtn">Skip</button>
-                <button class="ghost-btn" id="nextBtn" disabled>Next</button>
+            <div class="button-row action-row">
+              <button class="primary-btn" id="submitBtn">Submit</button>
+              <button class="ghost-btn" id="skipBtn">Skip</button>
+              <button class="ghost-btn" id="nextBtn" disabled>Next</button>
+            </div>
+          </article>
+
+          <aside class="coach-panel">
+            <section class="panel elimination-panel">
+              <div class="panel-title">
+                <span class="eyebrow">Elimination Pad</span>
+                <strong id="eliminationCount">0 ruled out</strong>
               </div>
-            </article>
+              <p class="hint">A playable guess usually needs two ruled-out options or one strong recall anchor.</p>
+              <div id="eliminationList" class="elimination-list"></div>
+            </section>
 
-            <aside class="coach-panel">
-              <section class="panel">
-                <div class="eyebrow">Elimination Pad</div>
-                <p class="hint">Rule-out discipline: trust a guess only when the wrong options have a clear reason to fall.</p>
-                <div id="eliminationList" class="elimination-list"></div>
-              </section>
+            <section class="panel feedback-panel" id="feedbackPanel" hidden>
+              <div class="eyebrow" id="resultLabel">Result</div>
+              <h3 id="answerLine">Answer</h3>
+              <p id="explanationText"></p>
+              <div class="note-list" id="eliminationNotes"></div>
+              <div class="news-hook" id="newsHook"></div>
+            </section>
 
-              <section class="panel feedback-panel" id="feedbackPanel" hidden>
-                <div class="eyebrow" id="resultLabel">Result</div>
-                <h3 id="answerLine">Answer</h3>
-                <p id="explanationText"></p>
-                <div class="note-list" id="eliminationNotes"></div>
-                <div class="news-hook" id="newsHook"></div>
-              </section>
-            </aside>
+            <section class="panel pattern-rail">
+              <div class="panel-title">
+                <span class="eyebrow">Pattern Rail</span>
+                <strong>Use as hints, not notes</strong>
+              </div>
+              <div id="patternRail"></div>
+            </section>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="planView">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">May 15-24, 2026</div>
+            <h2>9-day plan with no extra syllabus guilt.</h2>
           </div>
-        </section>
+          <p>Short runway means mocks, option discipline, error repair, CSAT safety, and only high-yield static-current links.</p>
+        </div>
+        <div class="plan-grid" id="planGrid"></div>
+        <div class="source-card">
+          <h3>Source anchors used</h3>
+          <p>Official UPSC syllabus, preliminary exam scheme, and recent GS Paper I question forms. App questions are original practice material modeled on pattern and difficulty.</p>
+          <div class="source-links">
+            <a href="https://upsc.gov.in/examinations/previous-question-papers" target="_blank" rel="noreferrer">UPSC previous papers</a>
+            <a href="https://upsc.gov.in/examinations/exam-notification" target="_blank" rel="noreferrer">UPSC notifications</a>
+            <a href="https://upsc.gov.in/examinations/examination-calendar" target="_blank" rel="noreferrer">UPSC calendar</a>
+          </div>
+        </div>
+      </section>
 
-        <section class="view" id="planView">
-          <div class="section-head">
-            <div>
-              <div class="eyebrow">May 15-24, 2026</div>
-              <h2>9-Day Prep Plan</h2>
+      <section class="view" id="reviewView">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Review + Spaced Repetition</div>
+            <h2>Repair the questions that are actually costing marks.</h2>
+          </div>
+          <button class="ghost-btn" id="clearReviewBtn">Clear Data</button>
+        </div>
+
+        <div class="review-layout">
+          <section class="panel due-panel">
+            <div class="panel-title">
+              <span class="eyebrow">Due Now</span>
+              <strong id="dueCount">0 cards</strong>
             </div>
-            <p>Designed for short runway: mocks, PYQ-form drills, error repair, and only high-yield current/static revision.</p>
-          </div>
-          <div class="plan-grid" id="planGrid"></div>
-        </section>
+            <div id="dueQueue" class="due-list"></div>
+          </section>
 
-        <section class="view" id="patternView">
-          <div class="section-head">
-            <div>
-              <div class="eyebrow">How UPSC Hides The Ball</div>
-              <h2>Pattern Map</h2>
-            </div>
-            <p>Use this as a bias map, not a prediction sheet. The exam can always rebalance.</p>
-          </div>
-          <div class="pattern-grid" id="patternGrid"></div>
-          <div class="source-card">
-            <h3>Source anchors used</h3>
-            <p>Official UPSC syllabus, preliminary exam scheme, and previous GS Paper I papers. The questions in this app are original and meant to imitate pattern and difficulty, not reproduce copyrighted test-series questions.</p>
-            <div class="source-links">
-              <a href="https://upsc.gov.in/examinations/previous-question-papers" target="_blank" rel="noreferrer">UPSC previous question papers</a>
-              <a href="https://upsc.gov.in/examinations/exam-notification" target="_blank" rel="noreferrer">UPSC notifications</a>
-              <a href="https://upsc.gov.in/examinations/examination-calendar" target="_blank" rel="noreferrer">UPSC calendar</a>
-            </div>
-          </div>
-        </section>
-
-        <section class="view" id="reviewView">
-          <div class="section-head">
-            <div>
-              <div class="eyebrow">Error Log</div>
-              <h2>Repair What Is Costing Marks</h2>
-            </div>
-            <button class="ghost-btn" id="clearReviewBtn">Clear Review</button>
-          </div>
-          <div class="review-summary" id="reviewSummary"></div>
-          <div class="review-list" id="reviewList"></div>
-        </section>
-      </main>
-    </div>
+          <section>
+            <div class="review-summary" id="reviewSummary"></div>
+            <div class="review-list" id="reviewList"></div>
+          </section>
+        </div>
+      </section>
+    </main>
 
     <script src="./questions.js"></script>
     <script src="./app.js"></script>
